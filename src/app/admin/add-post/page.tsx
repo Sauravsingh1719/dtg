@@ -5,10 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 type AddPostProps = {
-  onSuccess: () => void; // Specify the type for onSuccess prop
+  onSuccess?: () => void; // Specify the type for onSuccess prop
 };
 
-export default function AddPost({ onSuccess }: AddPostProps) {
+export default function AddPost({ onSuccess}) {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
   const [author, setAuthor] = useState('');
