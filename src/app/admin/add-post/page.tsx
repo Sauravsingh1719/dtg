@@ -5,10 +5,10 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 type AddPostProps = {
-  onSuccess: () => void; // Specify the type for onSuccess prop
+  onSuccess: (postId: string) => void;
 };
 
-export function AddPost({ onSuccess }: AddPostProps) {
+export default function AddPost({ onSuccess }: AddPostProps) {
   const [title, setTitle] = useState('');
   const [message, setMessage] = useState('');
   const [author, setAuthor] = useState('');
@@ -46,8 +46,10 @@ export function AddPost({ onSuccess }: AddPostProps) {
       });
 
       if (response.ok) {
+        const data = await response.json();
+        const postId = data.id; // Assuming the API returns a JSON object with an 'id' property
         alert('Post added successfully!');
-        onSuccess(); 
+        onSuccess(postId);
       } else {
         alert('Error adding post');
       }
