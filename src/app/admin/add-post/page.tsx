@@ -5,7 +5,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
 type AddPostProps = {
-  onSuccess: () => boolean; // Specify the return type as boolean
+  onSuccess: () => void; // Specify the type for onSuccess prop
 };
 
 export default function AddPost({ onSuccess }: AddPostProps) {
