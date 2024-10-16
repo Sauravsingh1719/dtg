@@ -2,8 +2,9 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import AddPost from '../add-post/page';
 import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
+import AddPost from '@/components/AddPost';
+
 
 type PostType = {
   _id: string;
