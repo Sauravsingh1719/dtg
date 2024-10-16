@@ -1,101 +1,85 @@
-import Image from "next/image";
+"use client";
+import Choose from "@/components/Choose";
+import { TextGenerateEffectDemo } from "@/components/Text/Text";
+import { TypewriterEffectSmooth } from "@/components/ui/typewriter-effect";
+import Vision from "@/components/Vision";
+import Whoweare from "@/components/Whoweare";
+import Work from "@/components/Work";
+import React from "react";
+import { motion, useInView } from 'framer-motion';
+import Client from "@/components/Client";
+import Services from "@/components/Services";
+import News from "@/components/News";
+import Contact from "@/components/Contact";
+import Meet from "@/components/Meet";
+import TestimonialsList from "@/components/Testimonials";
+import Blog from "@/components/Blog";
 
-export default function Home() {
+
+
+const words = [
+  {
+    text: "Data Analytics",
+    className: "text-blue-500 dark:text-blue-500",
+  },
+];
+
+const Page = () => {
+  const ref = React.useRef(null); 
+  const meetRef = React.useRef<HTMLDivElement | null>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+
+  const handleScrollToMeet = () => {
+    if (meetRef.current) {
+      meetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div>
+      <div className="main">
+        <div className="grid sm:grid-cols-10 lg:grid-cols-12 items-center justify-center h-[88vh] gap-x-10 px-5 sm:px-10 lg:px-20 sm:gap-5">
+          <div className="col-span-10 sm:col-start-1 sm:col-end-11 lg:col-span-5 lg:col-start-2 flex flex-col gap-2">
+            <div>
+              <h1 className="font-extrabold text-5xl">Empower your Business<br/> Journey with </h1>
+              <TypewriterEffectSmooth words={words} />
+              <TextGenerateEffectDemo />
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <button
+              onClick={handleScrollToMeet} // Scroll to Meet section on click
+              className="bg-blue-500 text-white p-2 rounded-xl w-max hover:scale-110 hover:bg-black transition duration-300 ease-in-out shadow-md shadow-slate-800 mt-5"
+            >
+              Let's Talk
+            </button>
+          </div>
+
+          <motion.div
+            ref={ref}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={isInView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.9, type: 'spring', bounce: 0.6 }}
+            className='relative col-span-10 sm:col-start-1 sm:col-end-11 lg:col-span-4 lg:col-start-7 flex flex-col gap-5 rounded-lg'
           >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <img src="/images/hero.webp" alt="Hero Image" />
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
+      <Whoweare />
+      <Vision />
+      <Blog />
+      <Choose />
+      <Work />
+      <Client />
+      <Services />
+      <TestimonialsList />
+      <News />
+      <Contact />
+      <div ref={meetRef}>
+        <Meet />
+      </div>
     </div>
   );
-}
+};
+
+export default Page;
