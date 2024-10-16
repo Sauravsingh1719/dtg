@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import AddPost from '../add-post/page';
+import {AddPost} from '../add-post/page';
 import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
 
 type PostType = {
