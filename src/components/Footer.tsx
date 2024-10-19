@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import React from 'react';
 
 const Footer = () => {
@@ -16,15 +16,15 @@ const Footer = () => {
         <div className='flex flex-row justify-between px-[20%]'>
           <div>
             <ul>
-              <Link href='/'><li>Home</li></Link>
-              <Link href='/admin'><li>Admin</li></Link>
-              <Link href='/posts'><li>Posts</li></Link>
+              <a href='/'><li>Home</li></a>
+              <a href='/admin'><li>Admin</li></a>
+              <a href='/posts'><li>Posts</li></a>
             </ul>
           </div>
           <div>
             <ul className='flex flex-row gap-5'>
               <li><img src='/images/insta.png' alt="Instagram" /></li>
-              <li><img src='/images/linkedin.png' alt="LinkedIn" /></li>
+              <li><img src='/images/aedin.png' alt="aedIn" /></li>
               <li><img src='/images/facebook.png' alt="Facebook" /></li>
             </ul>
           </div>

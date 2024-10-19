@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import React from 'react';
 
 const Client = () => {
@@ -15,10 +15,10 @@ const Client = () => {
           <h1 className='font-extrabold text-5xl text-black'>Trusted by Forward-Thinking Businesses</h1>
         </div>
         <div className='flex flex-row justify-between w-full '>
-          <Link href='https://greenworldsolarwares.com/index.html'><img src='/images/greenworld.webp'  /></Link>
-          <Link href='https://www.facebook.com/provitafeeds/'><img src='/images/thoo.webp'  /></Link>
-          <Link href='https://www.instagram.com/ds_menshairsalon/'><img src='/images/Ds.webp'  /></Link>
-          <Link href='https://netiatis.com/#intro'><img src='/images/swet.webp'  /></Link>
+          <a href='https://greenworldsolarwares.com/index.html'><img src='/images/greenworld.webp'  /></a>
+          <a href='https://www.facebook.com/provitafeeds/'><img src='/images/thoo.webp'  /></a>
+          <a href='https://www.instagram.com/ds_menshairsalon/'><img src='/images/Ds.webp'  /></a>
+          <a href='https://netiatis.com/#intro'><img src='/images/swet.webp'  /></a>
         </div>
       </div>
     </div>

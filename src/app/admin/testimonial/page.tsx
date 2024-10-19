@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import {
   Card,
   CardContent,
@@ -57,7 +56,7 @@ export default function TestimonialList() {
               <p>Designation: {testimonial.designation}</p>
             </CardContent>
             <CardFooter>
-              <Link href={`/admin/testimonial/${testimonial._id}`} className="text-blue-500 hover:underline">View Details</Link>
+              <a href={`/admin/testimonial/${testimonial._id}`} className="text-blue-500 hover:underline">View Details</a>
             </CardFooter>
           </Card>
         ))}

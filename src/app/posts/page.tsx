@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
+
 import Image from 'next/image';
 import { WobbleCard } from '@/components/ui/bobble-card';
 import { Button } from '@/components/ui/button';
@@ -89,7 +89,7 @@ export default function PostsList() {
           {/* Centered Grid Layout */}
           <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8 my-10 mx-auto">
             {posts.map((post: any) => (
-              <Link href={`/posts/${post._id}`} key={post._id}>
+              <a href={`/posts/${post._id}`} key={post._id}>
                 <WobbleCard
                   containerClassName="h-full bg-gray-900 text-white p-6 rounded-xl shadow-lg"
                   className="relative shadow-md shadow-gray-400"
@@ -117,7 +117,7 @@ export default function PostsList() {
                     className="absolute right-4 bottom-4 object-cover rounded-xl opacity-50"
                   />
                 </WobbleCard>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

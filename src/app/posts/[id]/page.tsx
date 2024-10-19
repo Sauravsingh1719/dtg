@@ -5,7 +5,7 @@ import { useParams } from 'next/navigation';
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
+  Breadcrumba,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
@@ -56,11 +56,11 @@ export default function PostDetail() {
             <Breadcrumb>
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/">Home</BreadcrumbLink>
+                  <Breadcrumba href="/">Home</Breadcrumba>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/posts">Blogs</BreadcrumbLink>
+                  <Breadcrumba href="/posts">Blogs</Breadcrumba>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>

@@ -1,6 +1,5 @@
 "use client"
 import { useEffect, useState } from 'react';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import AddPost from '../add-post/page';
 import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog';
@@ -82,7 +81,7 @@ export default function PostsList() {
           <div key={post._id} className="p-4 border rounded-md shadow-md">
             <h2>{post.title}</h2>
             <p>{post.message.length > 50 ? `${post.message.slice(0, 50)}...` : post.message}</p>
-            <Link href={`/admin/posts/${post._id}`}>View Post</Link>
+            <a href={`/admin/posts/${post._id}`}>View Post</a>
           </div>
         ))}
       </div>
